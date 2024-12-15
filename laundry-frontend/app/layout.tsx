@@ -5,20 +5,14 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 // import '@/styles/globals.css'
 import './globals.css'
-import Head from 'next/head'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Head>
-        <title>Laundryheap</title>
-        <meta name="description" content="Laundry Management System" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-      </Head>
 
       <body className={inter.className}>
         <AuthProvider>
