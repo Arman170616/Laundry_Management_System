@@ -120,6 +120,12 @@ export default function CreateOrder() {
             <Label htmlFor="name">Name</Label>
             <Input id="name" required />
           </div>
+          {/* Phone Number */}
+          <div>
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input id="phone" type="tel" required />
+          </div>
+
           <div>
             <Label htmlFor="area">Area</Label>
             <Input
@@ -130,6 +136,8 @@ export default function CreateOrder() {
             />
           </div>
           {/* Add similar inputs for road, house, and floor */}
+
+
           <div>
             <Label htmlFor="pickup-time">Pick-up Time</Label>
             <Input
@@ -166,7 +174,7 @@ export default function CreateOrder() {
       </div>
 
       {/* Right-side Progress Bar (Mobile: Below Form, Large Screens: Right side) */}
-      <div className="lg:w-1/3 lg:fixed lg:top-1/4 lg:right-4 w-full p-4 space-y-4 bg-gray-100 rounded-lg shadow-md mt-6 lg:mt-0">
+      {/* <div className="lg:w-1/3 lg:fixed lg:top-1/4 lg:right-4 w-full p-4 space-y-4 bg-gray-100 rounded-lg shadow-md mt-6 lg:mt-0">
         <h3 className="text-xl font-semibold mb-4">Order Progress</h3>
         <div className="relative pt-1">
           <div className="flex mb-2 items-center justify-between">
@@ -185,7 +193,7 @@ export default function CreateOrder() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

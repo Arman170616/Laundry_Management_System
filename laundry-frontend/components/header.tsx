@@ -16,6 +16,7 @@ export default function Header() {
         <div className="space-x-4">
           <Link href="/how-it-works">How It Works</Link>
           <Link href="/services">Services</Link>
+          <Link href="/pricing">Pricing</Link>
           {user ? (
             <>
               <Link href="/profile">Profile</Link>

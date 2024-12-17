@@ -2,24 +2,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Calendar, WashingMachine, Truck } from "lucide-react";
+
 
 const steps = [
   {
     title: "Schedule a Pickup",
     description: "Choose a convenient time for us to collect your laundry.",
-    icon: "/placeholder.svg?height=64&width=64",
+    icon: <Calendar className="text-primary h-10 w-10" />, // Calendar icon for scheduling
   },
   {
     title: "We Clean Your Clothes",
     description: "Our experts carefully wash, dry, and fold your items.",
-    icon: "/placeholder.svg?height=64&width=64",
+    icon: <WashingMachine className="text-primary h-10 w-10" />, // Washing machine icon for cleaning
   },
   {
     title: "Delivery",
     description: "We return your fresh, clean laundry at your chosen time.",
-    icon: "/placeholder.svg?height=64&width=64",
+    icon: <Truck className="text-primary h-10 w-10" />, // Truck icon for delivery
   },
-]
+];
 
 export default function HowItWorksPage() {
   return (
@@ -31,7 +33,9 @@ export default function HowItWorksPage() {
           <Card key={index}>
             <CardHeader>
               <CardTitle className="flex items-center gap-4">
-                <Image src={step.icon} alt="" width={64} height={64} className="rounded-full bg-primary/10 p-2" />
+                <div className="rounded-full bg-primary/10 p-2">
+                  {step.icon}
+                </div>
                 <span>{step.title}</span>
               </CardTitle>
             </CardHeader>
