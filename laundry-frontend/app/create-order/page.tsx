@@ -89,7 +89,7 @@ export default function CreateOrder() {
   const [pickupTime, setPickupTime] = useState('')
   const [deliveryTime, setDeliveryTime] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('')
-  const [progress, setProgress] = useState(0)  // To track progress
+  const [progress, setProgress] = useState<number>(0)
   
   const handleAddressChange = (field: string, value: string) => {
     setAddress(prev => {
@@ -99,10 +99,10 @@ export default function CreateOrder() {
     })
   }
 
-  const updateProgress = (updatedAddress: any) => {
-    let filledFields = Object.values(updatedAddress).filter(val => val !== '').length
-    let totalFields = 4 // area, road, house, floor
-    setProgress((filledFields / totalFields) * 100)
+  const updateProgress = (updatedAddress: Record<string, string>) => {
+    const filledFields = Object.values(updatedAddress).filter(val => val.trim() !== '').length
+    const totalFields = 4 // Total fields: area, road, house, floor
+    setProgress((filledFields / totalFields) * 100) // Calculate progress percentage
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -174,7 +174,7 @@ export default function CreateOrder() {
       </div>
 
       {/* Right-side Progress Bar (Mobile: Below Form, Large Screens: Right side) */}
-      {/* <div className="lg:w-1/3 lg:fixed lg:top-1/4 lg:right-4 w-full p-4 space-y-4 bg-gray-100 rounded-lg shadow-md mt-6 lg:mt-0">
+      <div className="lg:w-1/3 lg:fixed lg:top-1/4 lg:right-4 w-full p-4 space-y-4 bg-gray-100 rounded-lg shadow-md mt-6 lg:mt-0">
         <h3 className="text-xl font-semibold mb-4">Order Progress</h3>
         <div className="relative pt-1">
           <div className="flex mb-2 items-center justify-between">
@@ -193,7 +193,7 @@ export default function CreateOrder() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

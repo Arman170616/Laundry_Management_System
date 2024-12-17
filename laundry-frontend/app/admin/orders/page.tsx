@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export default function AdminOrders() {
@@ -12,8 +11,14 @@ export default function AdminOrders() {
     // Add more mock data as needed
   ])
 
+  // Function to update the status of an order
   const updateOrderStatus = (orderId: number, newStatus: string) => {
-    // Implement status update logic
+    // Update the order status in the state
+    setOrders((prevOrders) =>
+      prevOrders.map((order) =>
+        order.id === orderId ? { ...order, status: newStatus } : order
+      )
+    )
   }
 
   return (
@@ -55,4 +60,3 @@ export default function AdminOrders() {
     </div>
   )
 }
-

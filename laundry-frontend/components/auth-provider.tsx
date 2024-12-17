@@ -4,20 +4,20 @@ import { createContext, useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 const AuthContext = createContext<{
-  user: any
-  login: (provider: string) => void
+  user: unknown
+  login: () => void
   logout: () => void
 } | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<unknown>(null)
   const router = useRouter()
 
   useEffect(() => {
     // Check if user is logged in (e.g., by checking local storage or making an API call)
   }, [])
 
-  const login = async (provider: string) => {
+  const login = async () => {
     // Implement login logic here
     // This could involve redirecting to a backend endpoint or using a library like NextAuth.js
   }

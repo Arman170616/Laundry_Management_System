@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import ServiceCard from '@/components/service-card';
-import AdminServiceControls from '@/components/admin-service-controls';
+
 
 interface Service {
   id: string;
@@ -14,7 +14,7 @@ interface Service {
 
 export default function ServicesPage() {
   // Initial services data
-  const [services, setServices] = useState<Service[]>([
+  const [services] = useState<Service[]>([
     {
       id: '1',
       name: 'Laundry Service',

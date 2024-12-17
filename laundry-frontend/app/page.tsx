@@ -131,7 +131,8 @@ export default function Home() {
       <section className="relative">
         <div className="absolute inset-0">
           <Image
-            src="https://images.pexels.com/photos/28576623/pexels-photo-28576623.jpeg"
+            src="https://images.pexels.com/photos/8774524/pexels-photo-8774524.jpeg"
+            // src={require('./hero.webp')}
             alt="Laundry service"
             layout="fill"
             style={{ objectFit: 'cover' }}
