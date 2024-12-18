@@ -1,6 +1,11 @@
 module.exports = {
-    images: {
-      domains: ['images.pexels.com'],  // Allow Pexels domain
-    },
-  }
-  
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/**',
+      },
+    ],
+  },
+};

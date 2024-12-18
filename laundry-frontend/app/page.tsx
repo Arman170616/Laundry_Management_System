@@ -132,12 +132,12 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="https://images.pexels.com/photos/8774524/pexels-photo-8774524.jpeg"
-            // src={require('./hero.webp')}
             alt="Laundry service"
-            layout="fill"
+            fill
             style={{ objectFit: 'cover' }}
             priority
           />
+
           <div className="absolute inset-0 bg-black/50" /> {/* Overlay for better text visibility */}
         </div>
         {/* <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] text-center text-white px-4">
